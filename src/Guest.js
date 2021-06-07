@@ -1,11 +1,11 @@
 import React from "react";
-import { MyContext } from "./App";
+import { Consumer } from "./Context";
 
 function Guest() {
   return (
     <div>
       <h3>Guest Component</h3>
-      <MyContext.Consumer>
+      <Consumer>
         {({ data, handleClick }) => (
           <div>
             <h1>
@@ -17,7 +17,7 @@ function Guest() {
             <button onClick={handleClick}>Chage Value</button>
           </div>
         )}
-      </MyContext.Consumer>
+      </Consumer>
     </div>
   );
 }

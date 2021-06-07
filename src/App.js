@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles.css";
 import User from "./User";
-
-export const MyContext = React.createContext();
+import { Provider } from "./Context";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,9 +22,9 @@ export default class App extends React.Component {
     };
     return (
       <div className="App">
-        <MyContext.Provider value={contextValue}>
+        <Provider value={contextValue}>
           <User />
-        </MyContext.Provider>
+        </Provider>
       </div>
     );
   }
