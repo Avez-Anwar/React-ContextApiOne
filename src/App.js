@@ -9,14 +9,21 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       name: "React",
-      value: 10,
-      version: 17
+      value: 10
     };
   }
+
+  handleClickContext = () => {
+    this.setState({ value: this.state.value + 1 });
+  };
   render() {
+    const contextValue = {
+      data: this.state,
+      handleClick: this.handleClickContext
+    };
     return (
       <div className="App">
-        <MyContext.Provider value={this.state}>
+        <MyContext.Provider value={contextValue}>
           <User />
         </MyContext.Provider>
       </div>

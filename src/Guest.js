@@ -1,21 +1,23 @@
 import React from "react";
 import { MyContext } from "./App";
-import Person from "./Person";
 
 function Guest() {
   return (
     <div>
+      <h3>Guest Component</h3>
       <MyContext.Consumer>
-        {(data) => (
-          <h1>
-            {data.name}
-            {data.value}
-            <br />
-            {data.version}
-          </h1>
+        {({ data, handleClick }) => (
+          <div>
+            <h1>
+              Name: {data.name}
+              <br />
+              Value: {data.value}
+              <br />
+            </h1>
+            <button onClick={handleClick}>Chage Value</button>
+          </div>
         )}
       </MyContext.Consumer>
-      <Person />
     </div>
   );
 }
